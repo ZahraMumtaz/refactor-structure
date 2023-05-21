@@ -1,45 +1,43 @@
-Do at least ONE of the following tasks: refactor is mandatory. Write tests is optional, will be good bonus to see it. 
-Please do not invest more than 2-4 hours on this.
-Upload your results to a Github repo, for easier sharing and reviewing.
 
-Thank you and good luck!
+## Things I have added in the provided files.
+---
+1) Code Refactoring and related files to give a picture of my thoughts regarding the written code
+2) Unit tests of two functions only, of BookingController file using mocking to present how I have worked on this side.  
+
+# Regarding Code Refactoring
+---
+* ***Best Practices***: As laravel is a MVC framework, follow the complete practices of OOP along with some design practices like `repository pattern`, `singleton pattern` `traits` etc. So the best practices includes:
+1) To follow the design practices, SOLID principles along with ACID properties on database level. So as far as concerned about the provided files it's not following the SOLID principle, that make it even more worse. 
+2) A single function must be of maximum 5-10 lines (like poetry). 
+3) Beside following the coding practices (design patterns, solid principles) best practices  also  includes the performance of the application. 
+4) Variables should be user friendly.
+
+* ***Good Practices***: The good practices includes:
+1) To follow the necessary patterns provided by laravel to make code re-useablity as respository structure has been used in the provided files.
+2) Use of proper logging, that is required if a product/project is under developed process.
+3) Written test cases
+
+* ***Worst Practices***: Following are the worst practices that I have observed in the provided files:
+1) A single file is of more than 2000 lines.
+2) A single function is more than 30-40 lines.
+3) Variables aren't user friendly, like for a newbie it's can be hard to understand the purpose.
+4) Validations were missing for store and update function.
+5) Multiple `returns` in single function.
+6) Injection of repository in constructor, that is loading all the written function on a single function call. This can create performance issues at some level.
+7) Commented code.
+---
+
+## Details of  changes I have added.
+* To make use of form request.
+* Remove respository injection from constructor and added that injection as function parameter from `app/Http/Controllers/BookingController.php`
+* Added traits `app/Http/Traits/JobDetailsTrait.php` to make the function minimal and make the code reuseable. I'm assuming that can be helpful when works with the actual code.
+* Added a curl request as a helper function in file  `app/Helpers/helper.php`.
+* Tried to make variables user friendly at some point in `app/Repository/BookingRepository.php`
+* Removed multiple returns from `app/Repository/BookingRepository.php` repository file.
+* BookingRepository file can be more optimized by shifting function into their respective models.
+* Added unit tests of index and show functions of `app/Http/Controllers/BookingController.php` using mocking.
+Near me, by following the mentioned practices this code can be more efficient for newbies and can be more optimize.
 
 
-
-Code to refactor
-=================
-1) app/Http/Controllers/BookingController.php
-2) app/Repository/BookingRepository.php
-
-Code to write tests (optional)
-=====================
-3) App/Helpers/TeHelper.php method willExpireAt
-4) App/Repository/UserRepository.php, method createOrUpdate
-
-
-----------------------------
-
-What I expect in your repo:
-
-X. A readme with:   Your thoughts about the code. What makes it amazing code. Or what makes it ok code. Or what makes it terrible code. How would you have done it. Thoughts on formatting, structure, logic.. The more details that you can provide about the code (what's terrible about it or/and what is good about it) the easier for us to assess your coding style, mentality etc
-
-And 
-
-Y.  Refactor it if you feel it needs refactoring. The more love you put into it. The easier for us to asses your thoughts, code principles etc
-
-
-IMPORTANT: Make two commits. First commit with original code. Second with your refactor so we can easily trace changes. 
-
-
-NB: you do not need to set up the code on local and make the web app run. It will not run as its not a complete web app. This is purely to assess you thoughts about code, formatting, logic etc
-
-
-===== So expected output is a GitHub link with either =====
-
-1. Readme described above (point X above) + refactored code 
-OR
-2. Readme described above (point X above) + refactored core + a unit test of the code that we have sent
-
-Thank you!
 
 
