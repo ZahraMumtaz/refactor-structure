@@ -1,5 +1,5 @@
 
-## Things I have added in the provided files.
+# Things I have added in the provided files.
 ---
 1) Code Refactoring and related files to give a picture of my thoughts regarding the written code
 2) Unit tests of two functions only, of BookingController file using mocking to present how I have worked on this side.  
